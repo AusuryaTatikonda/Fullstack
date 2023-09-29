@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin-left: 25px;
+        background: rgb(217, 69, 118);
+    }
+    .image{
+        width: 850px;
+        height: 600px;
+        border-radius: 10px;
+        border: 2px solid black;
+        
+    }
+    p{
+        font-size: 17px;
+    }
+    img{
+            width: 300px;
+            height: 300px;
+            margin: 30px;
+            border: 1px solid black;
+        }
+       
+        button{
+            width: 130px;
+            height: 30px;
+            border: 2px solid rgb(44, 40, 40);
+            margin-top: 20px;
+            
+        }
+        #photo{
+            border: 2px solid black;
+            padding: 20px;
+            padding-bottom: 20px;
+            height: 90px;
+            width: 300px;
+        }
+</style>
+<body>
+    <p style="float: right; font-weight: bold; font-size: 20px; padding-right: 20px;"><a href="home.html" style="text-decoration: none;  color: black;">HOME</a></p>
+    <p style="float: right; font-weight: bold; font-size: 20px; padding-right: 20px;"><a href="breakfast.html" style="text-decoration: none;  color: black;">BACK</a></p>
+    <center><h1 style="font-size: 50px;">IDLI</h1></center>
+    
+    <div style="float: right; padding: 25px; font-size: 20px;"><h3>Ingredients:</h3>
+    <ul>
+        <li>idli rice (parboiled rice)</li>
+        <li>urad dal (split black gram)</li>
+        <li>fenugreek seeds (methi seeds)</li>
+        <li>Salt to taste</li>
+        <li>Water</li>
+    </ul>
+    <h3>Equipment:</h3>
+
+<ol><li>Idli steamer or pressure cooker with idli plates</li>
+<li>Idli molds (idli stand)</li></ol>
+</div>
+<img class="image"  src="idly.cms" alt="">
+<h2 >Recipe making</h2>
+<p>
+
+1.Wash the idli rice and urad dal separately a couple of times under running water until the water runs clear.
+Soak the idli rice and fenugreek seeds together in a bowl with enough water for about 4-6 hours.
+Soak the urad dal in another bowl with enough water for about 4-6 hours.
+<br>
+2.Drain the water from the soaked urad dal and grind it in a wet grinder or blender. Add water gradually and grind until it becomes smooth and fluffy. The consistency should be like whipped cream.
+Drain the water from the soaked rice and grind it to a smooth paste. You may need to add water gradually to achieve a smooth consistency.
+Mix the ground urad dal and rice batter together in a large mixing bowl.
+Add salt to taste and mix well. The batter should have a thick pouring consistency.
+<br>
+3.Cover the bowl with a clean cloth or lid and allow it to ferment for 8-12 hours or overnight. Keep it in a warm place; a turned-off oven with the light on is a good option.
+After fermentation, the batter will have risen and become slightly fluffy.
+<br>
+4.Grease the idli molds with a little oil or ghee to prevent sticking.
+Pour a ladleful of the fermented idli batter into each mold, filling them about 3/4 full.
+Place the idli stand or molds into a steamer or pressure cooker with some water at the bottom. Ensure that the molds do not touch the water.
+Steam the idlis on medium heat for about 10-15 minutes. You can insert a toothpick into an idli to check if it's done; if the toothpick comes out clean, the idlis are ready.
+<br>
+5.Carefully remove the idli molds from the steamer or pressure cooker and let them cool for a minute.
+Use a spoon or a butter knife to gently scoop the idlis out of the molds. They should come out easily.
+</p>
+<h2>Serve and enjoy hot idlis with coconut chutney, sambar, or your choice of side dish...</h2>
+<br>
+<br>
+<div id="photo">
+<div class="user-upload">
+    <input type="file" id="file-upload" accept="image/*"><br>
+    <button onclick="uploadPicture()">Upload</button>
+</div>
+</div>
+<div class="uploaded-pictures">
+    <h2>Uploaded Pictures:</h2>
+    <div id="pictures-container"></div>
+</div>
+
+<script>
+    function uploadPicture() {
+        const fileInput = document.getElementById("file-upload");
+        const picturesContainer = document.getElementById("pictures-container");
+
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                picturesContainer.appendChild(img);
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            alert("Please select a picture to upload.");
+        }
+    }
+</script>
+</body>
+</html>
